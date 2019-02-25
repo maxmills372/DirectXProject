@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6CE3B405-CC03-46B9-9C96-B0F544CFB298}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CMP301Week9___TesselationNew</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(solutiondir)\Debug;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib;DXFramework.lib;dxgi.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/Debug</AdditionalLibraryDirectories>
+    </Link>
+    <FxCompile>
+      <ObjectFileOutput>$(Directory)%(Filename).cso</ObjectFileOutput>
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="App1.cpp" />
+    <ClCompile Include="ColourShader.cpp" />
+    <ClCompile Include="delaunay\Edge.cpp" />
+    <ClCompile Include="delaunay\EdgeList.cpp" />
+    <ClCompile Include="delaunay\EdgeReorderer.cpp" />
+    <ClCompile Include="delaunay\Functions.cpp" />
+    <ClCompile Include="delaunay\Halfedge.cpp" />
+    <ClCompile Include="delaunay\HalfedgePriorityQueue.cpp" />
+    <ClCompile Include="delaunay\ICoord.cpp" />
+    <ClCompile Include="delaunay\kruskal.cpp" />
+    <ClCompile Include="delaunay\LR.cpp" />
+    <ClCompile Include="delaunay\Site.cpp" />
+    <ClCompile Include="delaunay\SiteList.cpp" />
+    <ClCompile Include="delaunay\Vertex.cpp" />
+    <ClCompile Include="delaunay\Voronoi.cpp" />
+    <ClCompile Include="geom\Circle.cpp" />
+    <ClCompile Include="geom\LineSegment.cpp" />
+    <ClCompile Include="geom\Point.cpp" />
+    <ClCompile Include="geom\Polygon.cpp" />
+    <ClCompile Include="geom\Rectangle.cpp" />
+    <ClCompile Include="geom\Triangle.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MyPlaneMesh.cpp" />
+    <ClCompile Include="MyTessMesh.cpp" />
+    <ClCompile Include="MyTessQuad.cpp" />
+    <ClCompile Include="MyTessSphereMesh.cpp" />
+    <ClCompile Include="TessellationQuadShader.cpp" />
+    <ClCompile Include="TessellationShader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App1.h" />
+    <ClInclude Include="ColourShader.h" />
+    <ClInclude Include="defines.h" />
+    <ClInclude Include="delaunay\Edge.h" />
+    <ClInclude Include="delaunay\EdgeList.h" />
+    <ClInclude Include="delaunay\EdgeReorderer.h" />
+    <ClInclude Include="delaunay\Functions.h" />
+    <ClInclude Include="delaunay\Halfedge.h" />
+    <ClInclude Include="delaunay\HalfedgePriorityQueue.h" />
+    <ClInclude Include="delaunay\ICoord.h" />
+    <ClInclude Include="delaunay\kruskal.h" />
+    <ClInclude Include="delaunay\LR.h" />
+    <ClInclude Include="delaunay\Site.h" />
+    <ClInclude Include="delaunay\SiteList.h" />
+    <ClInclude Include="delaunay\Vertex.h" />
+    <ClInclude Include="delaunay\Voronoi.h" />
+    <ClInclude Include="geom\Circle.h" />
+    <ClInclude Include="geom\LineSegment.h" />
+    <ClInclude Include="geom\Point.h" />
+    <ClInclude Include="geom\Polygon.h" />
+    <ClInclude Include="geom\Rectangle.h" />
+    <ClInclude Include="geom\Triangle.h" />
+    <ClInclude Include="MyPlaneMesh.h" />
+    <ClInclude Include="MyTessMesh.h" />
+    <ClInclude Include="MyTessQuad.h" />
+    <ClInclude Include="MyTessSphereMesh.h" />
+    <ClInclude Include="TessellationQuadShader.h" />
+    <ClInclude Include="TessellationShader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DXFramework\DXFramework.vcxproj">
+      <Project>{e887c38b-1273-433a-9dac-a153da5cf145}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shaders\tessellation_ds.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Domain</ShaderType>
+    </FxCompile>
+    <FxCompile Include="shaders\tessellation_hs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Hull</ShaderType>
+    </FxCompile>
+    <FxCompile Include="shaders\tessellation_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="shaders\tessellation_quad_ds.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Domain</ShaderType>
+    </FxCompile>
+    <FxCompile Include="shaders\tessellation_quad_hs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Hull</ShaderType>
+    </FxCompile>
+    <FxCompile Include="shaders\tessellation_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
